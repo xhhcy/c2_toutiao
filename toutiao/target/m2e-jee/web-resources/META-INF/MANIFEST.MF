@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: toutiao
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.nowcoder
+Build-Jdk: 1.7.0_45
+Built-By: xd
+Created-By: Maven Integration for Eclipse
+
