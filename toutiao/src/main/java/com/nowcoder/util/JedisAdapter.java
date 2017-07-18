@@ -22,47 +22,7 @@ public class JedisAdapter  implements InitializingBean{
 		}
 		
 	}
-	public static void main(String[] args) {
-		Jedis jedis = new Jedis();
-		jedis.flushAll();
-		jedis.set("xhh", "cy");
-		print(1,jedis.get("xhh"));
-		
-		jedis.set("pv", "100");
-		jedis.incr("pv");
-		jedis.incrBy("pv", 5);
-		
-		print(2, jedis.get("pv"));
-		
-		String list = "listA";
-		for (int i = 0; i < 10; i++) {
-			jedis.lpush("listA", "a"+i);
-			
-		}
-		jedis.lpush("listA", "a0");
-		print(3, jedis.lrange("listA", 0, 10));
-		print(4, jedis.lindex("listA", 3));
-		print(4, jedis.linsert("listA", BinaryClient.LIST_POSITION.AFTER, "a0", "xx"));
-		print(5,jedis.lrange("listA", 0, 100));
-		
-		
-		String userKey = "user1";
-		jedis.hset(userKey, "name", "xhh");
-		jedis.hset(userKey, "gender", "male");
-		jedis.hset(userKey, "age", "20");
-		jedis.hset(userKey, "phone", "110");
-		print(6, jedis.hget(userKey, "name"));
-		print(7, jedis.hgetAll(userKey));
-		jedis.hdel(userKey, "phone");
-		print(7, jedis.hgetAll(userKey));
-		print(8, jedis.hkeys(userKey));
-		print(9,jedis.hvals(userKey));
-		print(10, jedis.hexists(userKey, "email"));
-		
-		
-		
-		
-	}
+	
 	
 	private Jedis jedis = null;
 	private JedisPool jedisPool = null;
